@@ -17,17 +17,17 @@ class CalculadoraIMC:
         self.nome_entry = tk.Entry(master)
         self.nome_entry.grid(row=0, column=1, padx=12, pady=12)
 
-        tk.Label(master, text='Altura (M):', bg='light gray').grid(row=1, column=0, padx=12, pady=12)
-        self.altura_entry = tk.Entry(master)
-        self.altura_entry.grid(row=1, column=1, padx=12, pady=12)
-
-        tk.Label(master, text='Peso em (Kg):', bg='light gray').grid(row=2, column=0, padx=12, pady=12)
-        self.peso_entry = tk.Entry(master)
-        self.peso_entry.grid(row=2, column=1, padx=12, pady=12)
-
-        tk.Label(master, text='Endereço Completo:', bg='light gray').grid(row=3, column=0, padx=12, pady=12)
+        tk.Label(master, text='Endereço Completo:', bg='light gray').grid(row=1, column=0, padx=12, pady=12)
         self.endereco_entry = tk.Entry(master)
-        self.endereco_entry.grid(row=3, column=1, padx=12, pady=12)
+        self.endereco_entry.grid(row=1, column=1, padx=12, pady=12)
+
+        tk.Label(master, text='Altura (M):', bg='light gray').grid(row=2, column=0, padx=12, pady=12)
+        self.altura_entry = tk.Entry(master)
+        self.altura_entry.grid(row=2, column=1, padx=12, pady=12)
+
+        tk.Label(master, text='Peso em (Kg):', bg='light gray').grid(row=3, column=0, padx=12, pady=12)
+        self.peso_entry = tk.Entry(master)
+        self.peso_entry.grid(row=3, column=1, padx=12, pady=12)
 
         self.calcular_button = tk.Button(master, text='Calcular', bg='green', command=self.calcular_imc)
         self.calcular_button.grid(row=5, column=0, pady=12, padx=12)
@@ -72,9 +72,9 @@ class CalculadoraIMC:
 
     def reiniciar(self):
         self.nome_entry.delete(0, tk.END)
+        self.endereco_entry.delete(0, tk.END)
         self.altura_entry.delete(0, tk.END)
         self.peso_entry.delete(0, tk.END)
-        self.endereco_entry.delete(0, tk.END)
         self.resultado_label.config(text="")
 
     def sair(self):
