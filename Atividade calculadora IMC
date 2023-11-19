@@ -10,34 +10,35 @@ class CalculadoraIMC:
         self.master = master
         master.title('Calculo de IMC - Indice de massa corporal')
         master.minsize(400, 300)
-        janela.configure(bg="light gray")  # fundo azul
+        janela.configure(bg='light gray')  # fundo cinza claro
 
-        tk.Label(master, text='Nome do Paciente:', bg="light gray").grid(row=0, column=0, padx=12, pady=12)
+# modifiquei algumas cores
+        tk.Label(master, text='Nome do Paciente:', bg='light gray').grid(row=0, column=0, padx=12, pady=12)
         self.nome_entry = tk.Entry(master)
         self.nome_entry.grid(row=0, column=1, padx=12, pady=12)
 
-        tk.Label(master, text='Altura (M):', bg="light gray").grid(row=1, column=0, padx=12, pady=12)
+        tk.Label(master, text='Altura (M):', bg='light gray').grid(row=1, column=0, padx=12, pady=12)
         self.altura_entry = tk.Entry(master)
         self.altura_entry.grid(row=1, column=1, padx=12, pady=12)
 
-        tk.Label(master, text='Peso em (Kg):', bg="light gray").grid(row=2, column=0, padx=12, pady=12)
+        tk.Label(master, text='Peso em (Kg):', bg='light gray').grid(row=2, column=0, padx=12, pady=12)
         self.peso_entry = tk.Entry(master)
         self.peso_entry.grid(row=2, column=1, padx=12, pady=12)
 
-        tk.Label(janela, text='Endereço Completo:', bg="light gray").grid(row=3, column=0, padx=12, pady=12)
+        tk.Label(janela, text='Endereço Completo:', bg='light gray').grid(row=3, column=0, padx=12, pady=12)
         endereco_entry = tk.Entry(janela)
         endereco_entry.grid(row=3, column=1, padx=12, pady=12)
 
-        self.calcular_button = tk.Button(master, text='Calcular', bg="green", command=self.calcular_imc)
+        self.calcular_button = tk.Button(master, text='Calcular', bg='green', command=self.calcular_imc)
         self.calcular_button.grid(row=5, column=0, pady=12, padx=12)
 
-        self.reiniciar_button = tk.Button(master, text='Reiniciar', bg="white", command=self.reiniciar)
+        self.reiniciar_button = tk.Button(master, text='Reiniciar', bg='white', command=self.reiniciar)
         self.reiniciar_button.grid(row=5, column=1, pady=12, padx=12)
 
-        self.sair_button = tk.Button(master, text='Sair', bg="red", command=self.sair)
+        self.sair_button = tk.Button(master, text='Sair', bg='red', command=self.sair)
         self.sair_button.grid(row=5, column=2, pady=12, padx=12)
 
-        self.resultado_label = tk.Label(master, text='')
+        self.resultado_label = tk.Label(master, text='',bg='light gray')
         self.resultado_label.grid(row=4, column=0, columnspan=3, pady=12, padx=12)
 
 # Calcular o IMC segundo as informações fornecidas pelo o usuário.
@@ -85,4 +86,3 @@ app = CalculadoraIMC(janela)
 
 # Iniciar o loop principal
 janela.mainloop()
-
